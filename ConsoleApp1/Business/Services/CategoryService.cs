@@ -29,9 +29,9 @@ namespace NtierConsoleApp.Business.Services
             categoryRepository.AddCategory(category);
         }
 
-        public void UpdateCategory(Category category)
+        public void UpdateCategory(Category updatedCategory)
         {
-            categoryRepository.UpdateCategory(category);
+            categoryRepository.UpdateCategory(updatedCategory);
         }
 
         public void DeleteCategory(int categoryId)

@@ -25,19 +25,21 @@ namespace NtierConsoleApp.Business.Services
             return productRepository.GetProductById(productId);
         }
 
-        public void AddProduct(Product product)
+        public void AddProduct(Product newProduct)
         {
-            productRepository.AddProduct(product);
+            productRepository.AddProduct(newProduct);
         }
 
-        public void UpdateProduct(Product product)
+        public void UpdateProduct(Product updatedProduct)
         {
-            productRepository.UpdateProduct(product);
+            productRepository.UpdateProduct(updatedProduct);
         }
 
         public void DeleteProduct(int productId)
         {
             productRepository.DeleteProduct(productId);
         }
+
     }
+
 }
