@@ -1,31 +1,104 @@
 # NtierConsoleApp
 
-Bu proyekt, N-tier arxitekturasını və ADO.NET-i istifadə edərək Product və Category entitiləri üzrə CRUD əməliyyatlarını həyata keçirir.
+This console application implements CRUD operations for Product and Category entities using N-tier architecture and ADO.NET.
 
-## Quraşdırılma
+## Installation
 
-1. Bu proyekti öz kompüterinizə yükləyin.
-2. `NtierConsoleApp.sln` faylına sağ klik edin və "Visual Studio" ilə açın.
-3. `appsettings.json` faylını açın və verilənlər bazası üçün connection stringi təyin edin.
-4. `Program.cs` faylında `Main` metodunu açın və lazım olan əməliyyatları dəyişin və əlavə edin.
-5. Proyekti işə salmaq üçün F5 düyməsini basın.
+1. Clone this project to your local machine.
+2. Open the `NtierConsoleApp.sln` file with Visual Studio.
+3. Open the `appsettings.json` file and set the connection string for the database.
+4. Navigate to the `Program.cs` file and modify it to include the necessary operations:
 
-## Təlimatlar
+    ```csharp
+    // Example of ProductService usage
+    var productService = new ProductService(new ProductRepository(new DbContext("your_connection_string_here")));
 
-Bu layihədə əməliyyatları icra etmək üçün `ProductService` və `CategoryService` siniflərini istifadə edin. 
+    // Retrieve all products
+    var allProducts = productService.GetAllProducts();
+    foreach (var product in allProducts)
+    {
+        Console.WriteLine($"{product.ProductId} - {product.ProductName} - {product.Price:C}");
+    }
 
-Nümunə:
+    // Add a new product
+    // productService.AddProduct(new Product { ProductName = "New Product", CategoryId = 1, Price = 50.00 });
+    ```
+
+## Usage
+
+In this project, use `ProductService` and `CategoryService` classes to perform CRUD operations.
+
+Example:
 
 ```csharp
-// ProductService nümunəsi
+// Example of using ProductService
 var productService = new ProductService(new ProductRepository(new DbContext("your_connection_string_here")));
 
-// Bütün məhsulları əldə etmək
+// Retrieve all products
 var allProducts = productService.GetAllProducts();
 foreach (var product in allProducts)
 {
     Console.WriteLine($"{product.ProductId} - {product.ProductName} - {product.Price:C}");
 }
 
-// Yeni bir məhsul əlavə etmək
+// Add a new product
 // productService.AddProduct(new Product { ProductName = "New Product", CategoryId = 1, Price = 50.00 });
+
+
+
+
+Certainly! Below is a sample README.md file for a console application implementing CRUD operations for Product and Category entities using N-tier architecture and ADO.NET:
+
+markdown
+Copy code
+# NtierConsoleApp
+
+This console application implements CRUD operations for Product and Category entities using N-tier architecture and ADO.NET.
+
+## Installation
+
+1. Clone this project to your local machine.
+2. Open the `NtierConsoleApp.sln` file with Visual Studio.
+3. Open the `appsettings.json` file and set the connection string for the database.
+4. Navigate to the `Program.cs` file and modify it to include the necessary operations:
+
+    ```csharp
+    // Example of ProductService usage
+    var productService = new ProductService(new ProductRepository(new DbContext("your_connection_string_here")));
+
+    // Retrieve all products
+    var allProducts = productService.GetAllProducts();
+    foreach (var product in allProducts)
+    {
+        Console.WriteLine($"{product.ProductId} - {product.ProductName} - {product.Price:C}");
+    }
+
+    // Add a new product
+    // productService.AddProduct(new Product { ProductName = "New Product", CategoryId = 1, Price = 50.00 });
+    ```
+
+## Usage
+
+In this project, use `ProductService` and `CategoryService` classes to perform CRUD operations.
+
+Example:
+
+```csharp
+// Example of using ProductService
+var productService = new ProductService(new ProductRepository(new DbContext("your_connection_string_here")));
+
+// Retrieve all products
+var allProducts = productService.GetAllProducts();
+foreach (var product in allProducts)
+{
+    Console.WriteLine($"{product.ProductId} - {product.ProductName} - {product.Price:C}");
+}
+
+// Add a new product
+// productService.AddProduct(new Product { ProductName = "New Product", CategoryId = 1, Price = 50.00 });
+
+Contribution and Support
+If you have questions, suggestions, or contributions regarding this project, please feel free to reach out.
+
+
+Feel free to modify and expand this template according to the specific features and requirements of your project.
